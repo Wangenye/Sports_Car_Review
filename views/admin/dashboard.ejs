@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>Dashboard</h1>
+        <p>Welcome, Name
+        </p>
+        <a class="btn btn-secondary" href="/logout">Log Out</a>
+    </div>
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Blog</title>
+        <link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    </head>
+
+    <body>
+
+        <div class="container">
+            <h1 class="mb-4">Blog Articles</h1>
+            <a href="/new_post" class="btn btn-success">New Articles</a>
+        </div>
+
+
+        <% articles.forEach(article =>{ %>
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <%= article.title %>
+                    </h4>
+
+                    <div class="card-subtitle text-muted mb-2">
+                        <%= article.createdAt %>
+                    </div>
+
+                    <div class="card-subtitle text-muted mb-2">
+                        <%= article.author %>
+                    </div>
+                    <div class="card-text mb-2">
+                        <%= article.description %>
+                    </div>
+                    <div class="card-text mb-2">
+                        <%= article.post.substring(0,200) %>
+                    </div>
+                    <!-- <a href="/article/<%=article.slug %>" class="btn btn-primary">Read More</a> -->
+
+                    <a href="/show/<%= article.id %>" class="btn btn-info">Edit</a>
+                    <form class="d-inline" action="<%=article.id %>?_method=DELETE" method="POST">
+
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+            <% }) %>
+
+    </body>
+
+    </html>
+
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<%- include ('../partials/_header') %>
+
+    <!-- Page Header -->
+    <section class="masthead" style="background-image: url('img/home-bg.jpg')">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="post-heading">
+                        <h1>
+                            <%= article.title %>
+                        </h1>
+                        <h2 class="subheading">
+                            <%= article.description %>/h2>
+                                <span class="meta">Posted by
+              <a href="#"> <%= article.author %></a>
+              on  <%= article.createdAt %></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="images">
+        <div class="container">
+            Images go Here
+        </div>
+    </section>
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <%= article.post %>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+    <%- include ('../partials/_footer.ejs') %>

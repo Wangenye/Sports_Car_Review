@@ -1,0 +1,38 @@
+<div class="form-group">
+    <label for="title">Title</label>
+    <input required value="<%= article.title %>" type="text" name="title" id="title" class="form-control" />
+</div>
+<div class="form-group">
+    <label for="author">Author</label>
+    <input required value="<%= article.author %>" type="text" name="author" id="author" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label for="description">Decription</label>
+    <textarea required type="text" name="description" id="description" class="form-control">
+      <%= article.description %>
+      </textarea
+    >
+  </div>
+
+    
+  <div class="form-group">
+    <label for="post">Upload Images</label>
+  <input type="file" multiple name="postImage" id="postImage" disabled placeholder="Coming Soon">
+</div>
+  
+  <div class="form-group">
+    <label for="post">Post</label>
+    <textarea
+      required
+      type="text"
+      name="post"
+      id="post"
+      class="form-control"
+    >
+    <%= article.post %>
+ </textarea>
+</div>
+
+<a href="/admin_Dashboard" class="btn btn-secondary">Cancel </a>
+<button type="submit" class="btn btn-primary">Save</button>
